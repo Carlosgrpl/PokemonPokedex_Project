@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;  
+}
+
+#pkmnContentBox {
+    height: 500px;
+    width: 500px;
+    border: 10px solid lightgrey;
+    border-radius: 10px;
+    
+    background-color: tomato; /* We'll remove it later * */
+
+    margin: 0 auto;/* Para centrarlo */
+    margin-top: 60px; /* Para que esté en el centro de la pantalla, and not directly on the top of the page */
+
+    /* We add display flex so that pkmnInfo and pkmnList will be side by side */
+    display: flex;
+}
+
+#pkmnInfo {
+    /* Its going to take half the pkmnContentBox */
+    width: 250px; /* 500px divided by 2 (obvs) */
+    height:500px;
+    
+    background-color: aqua;
+}
+
+#pkmnList {
+    width: 250px; /* Also have of the pkmnContentBox    */
+    height: 500px;
+    background-color: blue;}
