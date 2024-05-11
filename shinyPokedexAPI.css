@@ -28,4 +28,13 @@ body {
 #pkmnList {
     width: 250px; /* Also have of the pkmnContentBox    */
     height: 500px;
-    background-color: blue;}
+    background-color: blue;
+    font-size: 16px;
+    overflow-y: auto; /* If it flows past our 500px height, it will scroll */}
+
+    .pokemonName {
+        border: 1px solid black;
+        border radius: 10px;
+        background-color: white;
+        margin: 5px;
+        padding: 5px;
