@@ -9,12 +9,14 @@ window.onload = async function () {
     /* <div> id="1" class="pokemonName"> BULBASAUR </div>  */
     let pokemon = document.createElement("div");
     pokemon.id = i; /* Whe set the id so that then we can use onclick */
-    ppokemon.innerText = i.toString() + ". " + pokedex[i]["name"].toUpperCase();
+    pokemon.innerText = i.toString() + ". " + pokedex[i]["name"].toUpperCase();
     pokemon.classList.add("pokemonName");
     pokemon.addEventListener("click", UpdatePokemon);
     document.getElementById("pkmnList").append(pokemon);
   }
   /* Onload is an event used to automatically display the 1st pkmn once the page is loaded */
+  document.getElementById("pkmnDescription").innerText =
+    pokedex[1]["description"];
   console.log(pokedex);
 };
 /* Fetch always go wit async and await, it NEEDS an async function to work properly */
@@ -41,11 +43,47 @@ console.log(pokemonDescription); */
   pokedex[num] = {
     name: pokemonName,
     img: pokemonImage,
-    type: pokemonType,
+    types: pokemonType,
     description: pokemonDescription,
   };
 }
 
 function UpdatePokemon() {
   document.getElementById("pkmnImage").src = pokedex[this.id]["img"];
+  /* We need to clear the previous types used */
+  let typesDiv = document.getElementById("pkmnTypes");
+  while (typesDiv.firstChild) {
+    typesDiv.firstChild.remove();
+  }
+  /* Update PKMN types */
+  let types = pokedex[this.id]["types"];
+  let typeArray = types.split(", "); // Split the string of types into an array
+  for (let i = 0; i < typeArray.length; i++) {
+    let type = document.createElement("span");
+    type.innerText = typeArray[i].toUpperCase();
+    type.classList.add("typeBox");
+    type.classList.add(typeArray[i]); /* adds background and font color */
+    typesDiv.append(type);
+  }
+
+  /* Description */
+
+  /* Description */
+  document.getElementById("pkmnDescription").innerText =
+    pokedex[this.id]["description"];
+}
+
+function searchPokemon() {
+  let searchTerm = document.getElementById("searchInput").value.toLowerCase();
+  let foundPokemon = Object.values(pokedex).find((pokemon) =>
+    pokemon.name.toLowerCase().includes(searchTerm)
+  );
+  if (foundPokemon) {
+    let pokemonId = Object.keys(pokedex).find(
+      (key) => pokedex[key] === foundPokemon
+    );
+    document.getElementById(pokemonId).click();
+  } else {
+    alert("Pokemon not found!");
+  }
 }

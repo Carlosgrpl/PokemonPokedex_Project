@@ -1,5 +1,7 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;  
+    font-family: Arial, Helvetica, sans-serif;
+    background: url(pokemonbackgroundimage.jpg) no-repeat;
+    background-size: cover;  
 }
 
 #pkmnContentBox {
@@ -7,30 +9,36 @@ body {
     width: 500px;
     border: 10px solid lightgrey;
     border-radius: 10px;
+    background-size: cover;
     
-    background-color: tomato; /* We'll remove it later * */
+    /* background-color: tomato; */ /* We'll remove it later * */
 
     margin: 0 auto;/* Para centrarlo */
     margin-top: 60px; /* Para que esté en el centro de la pantalla, and not directly on the top of the page */
 
     /* We add display flex so that pkmnInfo and pkmnList will be side by side */
     display: flex;
+
+    background: url(pokemonball.jpg) no-repeat; /* corrected background URL */
+    background-size: cover;
+}
 }
 
 #pkmnInfo {
     /* Its going to take half the pkmnContentBox */
-    width: 250px; /* 500px divided by 2 (obvs) */
-    height:500px;
-    
-    background-color: aqua;
+    width: 250px; 
+/*     
+    background-color: aqua; */
 }
 
 #pkmnList {
     width: 250px; /* Also have of the pkmnContentBox    */
     height: 500px;
-    background-color: blue;
-    font-size: 16px;
-    overflow-y: auto; /* If it flows past our 500px height, it will scroll */}
+/*     background-color: blue;
+ */    font-size: 16px;
+    overflow-y: auto; /* If it flows past our 500px height, it will scroll */  
+    text-align: center  ;  
+}
 
     .pokemonName {
         border: 1px solid black;
@@ -38,3 +46,119 @@ body {
         background-color: white;
         margin: 5px;
         padding: 5px;
+
+    }
+
+    #pkmnInfo img {
+        width: 160px;
+        height: 160px;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-top: 20px;
+        background-color: whitesmoke;
+    }
+
+#pkmnTypes {
+    margin-top: 10px;}
+
+.typeBox    {
+    padding: 3px;
+    margin: 5px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.fire {
+    background-color: red;
+    color:antiquewhite;}
+.grass {
+    background-color: green;
+    color:antiquewhite;}
+.poison {
+    background-color: rgb(118, 43, 118);
+    color:antiquewhite;}
+.water {
+    background-color: blue;
+    color:antiquewhite;}
+
+.ice {
+    background-color: lightblue;
+    color:antiquewhite;}
+
+.electric {
+    background-color: yellow;
+    color:antiquewhite;}
+
+.bug {
+    background-color: darkgreen;
+    color:antiquewhite;}
+
+.psychic {
+    background-color: pink;
+    color:antiquewhite;}
+
+.ghost {
+    background-color: purple;
+    color:antiquewhite;}
+
+.dragon {
+    background-color: orange;
+    color:antiquewhite;}
+
+.normal {
+    background-color: gray;
+    color:antiquewhite;}
+
+.fighting {
+    background-color: brown;
+    color:antiquewhite;}
+
+.flying {
+    background-color: skyblue;
+    color:antiquewhite;}
+
+.ground {
+    background-color: brown;
+    color:antiquewhite;}
+
+.rock {
+    background-color: gray;
+    color:antiquewhite;}
+
+.steel {
+    background-color: gray;
+    color:antiquewhite;}
+
+.fairy {
+    background-color: pink;
+    color:antiquewhite;}
+
+.shadow {
+    background-color: black;
+    color:antiquewhite;}
+
+.dark {
+    background-color: black;
+    color:antiquewhite;}
+
+.unknown {
+    background-color: gray;
+    color:antiquewhite;}
+
+.dragon {
+    background-color: purple;
+    color:antiquewhite;}
+
+#pkmnDescription {
+    width: 230px;
+    height: 100px;
+    background-color: antiquewhite;
+    border: 1px solid black;
+    border-radius: 10px;
+
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 2px;
+    font-size: 18px;
+    overflow-y: auto;    
+}    
